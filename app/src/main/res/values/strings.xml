@@ -1,0 +1,47 @@
+<resources>
+    <!-- GENERAL STRINGS -->
+    <string name="app_name">GW2 API Experiment</string>
+
+
+    <!-- SHARED PREFERENCES STRINGS -->
+    <string name="prefs_api_key">api_key</string>
+    <string name="prefs_name">gw2</string>
+
+
+    <!-- LOG IN STRINGS -->
+    <string name="log_in">Log In</string>
+    <string name="gw2_getapikey_url">https://account.arena.net/applications</string>
+    <string name="invalid_api_key">Valid API Key Required</string>
+    <string name="welcome_statement">Welcome to the GW2 API Experiment!</string>
+    <string name="by_darrellii">by Darrellii.5632</string>
+    <string name="gw2_api_key_hint">Guild Wars 2 API Key</string>
+    <string name="get_api_key">Get API KEY</string>
+    <string name="failed_to_load_account">Failed to load Account Data</string>
+    <string name="required_permissions_lbl">Required Permissions</string>
+
+    <!-- MAIN ACTIVITY STRINGS -->
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="log_out">Log Out</string>
+    <string name="share">Share App With Friends</string>
+    <string name="about">About</string>
+    <string name="characters">Characters</string>
+    <string name="bank">Bank</string>
+    <string name="wallet">Wallet</string>
+    <string name="feature_in_progress">This Feature is still in Development</string>
+    <string name="darrellii">Darrellii.5632</string>
+
+
+    <!-- ABOUT STRINGS -->
+    <string name="title_activity_about">About The Experiment</string>
+    <string name="arenanet_copyright">© 2015 ArenaNet, LLC. All rights reserved. NCSOFT, the interlocking NC logo, ArenaNet, Guild Wars, Guild Wars Factions, Guild Wars Nightfall, Guild Wars: Eye of the North, Guild Wars 2, Heart of Thorns, and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation. All other trademarks are the property of their respective owners.</string>
+    <string name="copyright_lbl">All Guild Wars 2 Content Property of ArenaNet</string>
+    <string name="mission_statement">The GW2 API Experiment was created by user Darrellii.5632 as an opportunity to provide a high quality user experience with GW2\'s user content on Android, showcase the his abilities as an Android Developer, and provide examples for key concepts discussed in his blog.</string>
+    <string name="contact_the_developer">Contact the Developer:</string>
+    <string name="gw2_darrellii">GuildWars2: @Darrellii.5632</string>
+    <string name="mdm_darrellii">Medium Blog: @Darrellii</string>
+    <string name="twitter_darrellii">Twitter: @Darrellii</string>
+    <string name="under_construction">Features Still Under Development! \nMore Coming Soon!</string>
+</resources>
