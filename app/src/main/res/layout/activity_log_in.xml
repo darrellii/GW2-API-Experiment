@@ -15,6 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/welcome_text"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:textSize="42sp"
         android:text="@string/welcome_statement" />
@@ -33,6 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/gw2_api_key_hint"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="30sp"
+        android:lines="1"
         android:id="@+id/api_key"
         android:layout_below="@id/darrellii_text"/>
     <Button
@@ -48,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/get_api_key"
+        android:textColor="@color/colorPrimary"
         android:id="@+id/login"
         android:text="@string/log_in"/>
 
@@ -55,6 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:textColor="@color/text_red_light"
         android:id="@+id/required_perms"
         />
 

@@ -18,6 +18,8 @@
     <string name="get_api_key">Get API KEY</string>
     <string name="failed_to_load_account">Failed to load Account Data</string>
     <string name="required_permissions_lbl">Required Permissions</string>
+    <string name="create_customtab">android.support.customtabs.extra.SESSION</string>
+    <string name="customtab_color">android.support.customtabs.extra.TOOLBAR_COLOR</string>
 
     <!-- MAIN ACTIVITY STRINGS -->
     <string name="action_settings">Settings</string>
@@ -32,6 +34,7 @@
     <string name="wallet">Wallet</string>
     <string name="feature_in_progress">This Feature is still in Development</string>
     <string name="darrellii">Darrellii.5632</string>
+    <string name="under_construction">Features Still Under Development! \nMore Coming Soon!</string>
 
 
     <!-- ABOUT STRINGS -->
@@ -43,8 +46,9 @@
     <string name="gw2_darrellii">GuildWars2: @Darrellii.5632</string>
     <string name="mdm_darrellii">Medium Blog: @Darrellii</string>
     <string name="twitter_darrellii">Twitter: @Darrellii</string>
-    <string name="under_construction">Features Still Under Development! \nMore Coming Soon!</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
 </resources>

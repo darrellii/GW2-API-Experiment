@@ -3,6 +3,7 @@ package com.darrellii.gw2.gw2apiexperment.app.login;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -52,14 +53,28 @@ public class LogInActivity extends AppCompatActivity implements LoginContract.Vi
     @Override
     public void openGW2WebIntent() {
         String url = getString(R.string.gw2_getapikey_url);
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(url));
+        Intent i = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            Bundle extras = new Bundle();
+            extras.putBinder(getString(R.string.create_customtab),null);
+            i.putExtras(extras);
+            int color;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                color = getColor(R.color.colorPrimary);
+            } else {
+                color = getResources().getColor(R.color.colorPrimary);
+            }
+
+            i.putExtra(getString(R.string.customtab_color),color);
+        }
+
         startActivity(i);
     }
 
     @Override
     public void logIn() {
-
         mListener.onLogIn();
     }
 
