@@ -35,6 +35,8 @@
     <string name="feature_in_progress">This Feature is still in Development</string>
     <string name="darrellii">Darrellii.5632</string>
     <string name="under_construction">Features Still Under Development! \nMore Coming Soon!</string>
+    <string name="thanks_sharing">Thanks for Sharing The Experiment</string>
+    <string name="share_string">Check out The GW2 Experiment repo at: https://github.com/darrellii/GW2-API-Experiment</string>
 
 
     <!-- ABOUT STRINGS -->
@@ -46,8 +48,6 @@
     <string name="gw2_darrellii">GuildWars2: @Darrellii.5632</string>
     <string name="mdm_darrellii">Medium Blog: @Darrellii</string>
     <string name="twitter_darrellii">Twitter: @Darrellii</string>
-
-
 
 
 

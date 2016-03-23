@@ -36,7 +36,7 @@ public class MainPresenter implements MainContract.UserActionsListener {
 
     @Override
     public void onNavShare() {
-        mView.showFeatureInProgress();
+        mView.createShareIntent();
     }
 
     @Override

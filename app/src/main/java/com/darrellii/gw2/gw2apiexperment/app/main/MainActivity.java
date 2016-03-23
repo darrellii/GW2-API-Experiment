@@ -176,5 +176,15 @@ public class MainActivity extends AppCompatActivity
                 .replace(R.id.content, newFragment)
                 .commitAllowingStateLoss();
     }
+
+    @Override
+    public void createShareIntent() {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TITLE, getString(R.string.thanks_sharing));
+        // TODO: Update the pre-text
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_string));
+        startActivity(Intent.createChooser(shareIntent, "Share via.."));
+    }
     //</editor-fold>
 }

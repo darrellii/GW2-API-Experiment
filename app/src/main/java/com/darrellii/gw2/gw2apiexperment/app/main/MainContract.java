@@ -45,6 +45,8 @@ public interface MainContract {
         void openAbout();
 
         void changeFragment(Fragments fragment, String... args);
+
+        void createShareIntent();
     }
 
     interface UserActionsListener  {
