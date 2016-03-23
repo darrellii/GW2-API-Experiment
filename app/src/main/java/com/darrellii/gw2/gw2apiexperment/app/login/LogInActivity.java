@@ -23,14 +23,12 @@ import retrofit.Retrofit;
 
 public class LogInActivity extends AppCompatActivity implements LoginContract.View {
 
-    private LoginContract.UserActionsListener mListener;
+    private final LoginContract.UserActionsListener mListener = new LogInPresenter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-
-        mListener = new LogInPresenter(this);
 
         mListener.onCreated();
 

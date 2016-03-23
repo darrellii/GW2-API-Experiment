@@ -5,18 +5,23 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.darrellii.gw2.gw2apiexperment.R;
 import com.darrellii.gw2.gw2apiexperment.app.about.AboutActivity;
 import com.darrellii.gw2.gw2apiexperment.app.login.LogInActivity;
+import com.darrellii.gw2.gw2apiexperment.app.main.MainContract.Fragments;
+import com.darrellii.gw2.gw2apiexperment.app.wallet.WalletFragment;
 import com.darrellii.gw2.gw2apiexperment.network.GW2Client;
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.GuildInfo;
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.User;
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -152,6 +158,23 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void openAbout() {
         startActivity(new Intent(this , AboutActivity.class));
+    }
+
+
+    @Override
+    public void changeFragment(Fragments fragment, String... args) {
+        Fragment newFragment = null;
+        switch (fragment){
+            case WALLET:
+            newFragment = new WalletFragment();
+                break;
+        }
+        findViewById(R.id.under_construction).setVisibility(View.GONE);
+        getSupportActionBar().setTitle(fragment.mTitle);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content, newFragment)
+                .commitAllowingStateLoss();
     }
     //</editor-fold>
 }

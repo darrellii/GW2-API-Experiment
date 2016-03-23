@@ -2,6 +2,7 @@ package com.darrellii.gw2.gw2apiexperment.app.main;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.GuildInfo;
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.User;
@@ -11,6 +12,19 @@ import com.darrellii.gw2.gw2apiexperment.network.models.responses.User;
  * For Use By GW2 API Experment
  */
 public interface MainContract {
+
+    enum Fragments {
+        WALLET("Wallet");
+
+
+
+
+        public String mTitle;
+        Fragments(String title){
+            mTitle = title;
+        }
+
+    }
 
     interface View extends NavigationView.OnNavigationItemSelectedListener {
 
@@ -29,6 +43,8 @@ public interface MainContract {
         void showFailedToLoad(@NonNull String message);
 
         void openAbout();
+
+        void changeFragment(Fragments fragment, String... args);
     }
 
     interface UserActionsListener  {

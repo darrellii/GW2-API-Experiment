@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class LogInPresenter implements LoginContract.UserActionsListener {
 
-    public LoginContract.View mView;
+    public final LoginContract.View mView;
 
     public LogInPresenter(LoginContract.View view) {
         mView = view;

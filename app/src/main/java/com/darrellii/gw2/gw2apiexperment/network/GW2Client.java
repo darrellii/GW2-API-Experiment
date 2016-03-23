@@ -1,12 +1,14 @@
 package com.darrellii.gw2.gw2apiexperment.network;
 
 import com.darrellii.gw2.gw2apiexperment.app.GW2Application;
-import com.darrellii.gw2.gw2apiexperment.network.models.requests.GuildRequest;
+import com.darrellii.gw2.gw2apiexperment.network.models.responses.Currency;
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.GuildInfo;
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.TokenInfo;
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.User;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
+
+import java.util.List;
 
 import retrofit.Callback;
 import retrofit.Retrofit;
@@ -35,6 +37,12 @@ public class GW2Client {
     public static void getGuildDetails(String guildId, Callback<GuildInfo> callback){
         mService.getGuildDetails(guildId).enqueue(callback);
     }
+
+    public static void getWallet(Callback<List<Currency>> callback){
+        mService.getWallet(GW2Application.getAPIKey())
+                .enqueue(callback);
+    }
+
 
     //</editor-fold>
 

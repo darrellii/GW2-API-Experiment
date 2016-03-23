@@ -44,4 +44,7 @@
     <string name="mdm_darrellii">Medium Blog: @Darrellii</string>
     <string name="twitter_darrellii">Twitter: @Darrellii</string>
     <string name="under_construction">Features Still Under Development! \nMore Coming Soon!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

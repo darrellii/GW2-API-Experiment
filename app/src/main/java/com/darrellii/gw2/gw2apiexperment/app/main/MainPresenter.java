@@ -26,7 +26,7 @@ public class MainPresenter implements MainContract.UserActionsListener {
 
     @Override
     public void onNavWallet() {
-        mView.showFeatureInProgress();
+        mView.changeFragment(MainContract.Fragments.WALLET);
     }
 
     @Override
