@@ -23,7 +23,7 @@
 
     <!-- MAIN ACTIVITY STRINGS -->
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">The Experiment</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="log_out">Log Out</string>
