@@ -19,11 +19,11 @@ import android.widget.Toast;
 
 import com.darrellii.gw2.gw2apiexperment.R;
 import com.darrellii.gw2.gw2apiexperment.app.about.AboutActivity;
+import com.darrellii.gw2.gw2apiexperment.app.guilds.GuildsListFragment;
 import com.darrellii.gw2.gw2apiexperment.app.login.LogInActivity;
 import com.darrellii.gw2.gw2apiexperment.app.main.MainContract.Fragments;
 import com.darrellii.gw2.gw2apiexperment.app.wallet.WalletFragment;
 import com.darrellii.gw2.gw2apiexperment.network.GW2Client;
-import com.darrellii.gw2.gw2apiexperment.network.models.responses.GuildInfo;
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.User;
 
 import retrofit.Callback;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_wallet) {
             mListener.onNavWallet();
         } else if (id == R.id.nav_bank) {
-            mListener.onNaveBank();
+            mListener.onNavBank();
         } else if (id == R.id.nav_characters) {
             mListener.onNavCharacters();
         } else if (id == R.id.nav_about) {
@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity
             mListener.onNavShare();
         } else if (id == R.id.nav_logout) {
             mListener.onNavLogout();
+        } else if (id == R.id.nav_guilds) {
+            mListener.onNavGuilds();
         }
 
         mDrawer.closeDrawer(GravityCompat.START);
@@ -108,20 +110,6 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    @Override
-    public void loadGuildInfo(String guildId) {
-        GW2Client.getGuildDetails(guildId, new Callback<GuildInfo>() {
-            @Override
-            public void onResponse(Response<GuildInfo> response, Retrofit retrofit) {
-                mListener.onGuildLoaded(response.body());
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-                mListener.onGuildFailedLoad();
-            }
-        });
-    }
 
     @Override
     public void setUserName(String userName) {
@@ -129,11 +117,6 @@ public class MainActivity extends AppCompatActivity
         textView.setText(userName);
     }
 
-    @Override
-    public void setGuild(@NonNull String guild) {
-        TextView textView = (TextView) mDrawer.findViewById(R.id.guilds);
-        textView.setText(guild);
-    }
 
     @Override
     public void logout() {
@@ -157,17 +140,19 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void openAbout() {
-        startActivity(new Intent(this , AboutActivity.class));
+        startActivity(new Intent(this, AboutActivity.class));
     }
 
 
     @Override
     public void changeFragment(Fragments fragment, String... args) {
         Fragment newFragment = null;
-        switch (fragment){
+        switch (fragment) {
             case WALLET:
-            newFragment = new WalletFragment();
+                newFragment = new WalletFragment();
                 break;
+            case GUILDS:
+                newFragment = GuildsListFragment.newInstance(args);
         }
         findViewById(R.id.under_construction).setVisibility(View.GONE);
         getSupportActionBar().setTitle(fragment.mTitle);

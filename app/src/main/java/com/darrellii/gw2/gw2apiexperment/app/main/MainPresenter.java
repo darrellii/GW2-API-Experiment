@@ -1,6 +1,5 @@
 package com.darrellii.gw2.gw2apiexperment.app.main;
 
-import com.darrellii.gw2.gw2apiexperment.network.models.responses.GuildInfo;
 import com.darrellii.gw2.gw2apiexperment.network.models.responses.User;
 
 /**
@@ -10,6 +9,7 @@ import com.darrellii.gw2.gw2apiexperment.network.models.responses.User;
 public class MainPresenter implements MainContract.UserActionsListener {
 
     private MainContract.View mView;
+    private User mUser;
 
     public MainPresenter(MainContract.View view){
         mView = view;
@@ -19,9 +19,8 @@ public class MainPresenter implements MainContract.UserActionsListener {
     @Override
     public void onUserInfoLoaded(User user) {
         mView.setUserName(user.name);
-        if(user.guilds != null && user.guilds.length > 0){
-            mView.loadGuildInfo(user.guilds[0]);
-        }
+        mUser = user;
+
     }
 
     @Override
@@ -50,8 +49,13 @@ public class MainPresenter implements MainContract.UserActionsListener {
     }
 
     @Override
-    public void onNaveBank() {
+    public void onNavBank() {
         mView.showFeatureInProgress();
+    }
+
+    @Override
+    public void onNavGuilds() {
+        mView.changeFragment(MainContract.Fragments.GUILDS,mUser.guilds);
     }
 
     @Override
@@ -59,13 +63,5 @@ public class MainPresenter implements MainContract.UserActionsListener {
         mView.showFailedToLoad(message);
     }
 
-    @Override
-    public void onGuildLoaded(GuildInfo guildInfo) {
-        mView.setGuild("["+guildInfo.tag+"]"+guildInfo.guild_name);
-    }
 
-    @Override
-    public void onGuildFailedLoad() {
-        mView.showFailedToLoad("Failed to Load Guild Info");
-    }
 }

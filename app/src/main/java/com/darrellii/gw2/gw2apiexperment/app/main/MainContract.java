@@ -14,10 +14,9 @@ import com.darrellii.gw2.gw2apiexperment.network.models.responses.User;
 public interface MainContract {
 
     enum Fragments {
-        WALLET("Wallet");
-
-
-
+        WALLET("Wallet"),
+        GUILDS("Guilds")
+        ;
 
         public String mTitle;
         Fragments(String title){
@@ -30,11 +29,7 @@ public interface MainContract {
 
         void loadUserInfo();
 
-        void loadGuildInfo(String guildId);
-
         void setUserName(@NonNull String userName);
-
-        void setGuild(@NonNull String guild);
 
         void logout();
 
@@ -47,6 +42,7 @@ public interface MainContract {
         void changeFragment(Fragments fragment, String... args);
 
         void createShareIntent();
+
     }
 
     interface UserActionsListener  {
@@ -63,12 +59,11 @@ public interface MainContract {
 
         void onNavCharacters();
 
-        void onNaveBank();
+        void onNavBank();
+
+        void onNavGuilds();
 
         void onUserFailedLoad(String message);
-        
-        void onGuildLoaded(GuildInfo guildInfo);
 
-        void onGuildFailedLoad();
     }
 }

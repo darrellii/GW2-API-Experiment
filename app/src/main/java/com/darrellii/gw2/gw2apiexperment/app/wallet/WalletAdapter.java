@@ -30,15 +30,12 @@ public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.WalletHold
 
     @Override
     public WalletHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        System.out.println("onCreateViewHolder");
-
         return new WalletHolder(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_currency, parent, false));
     }
 
     @Override
     public void onBindViewHolder(WalletHolder holder, int position) {
-        System.out.print("onBindViewHolder" + mWallet.get(position).getName());
         holder.amount.setText(Integer.toString(mWallet.get(position).value));
         holder.name.setText(mWallet.get(position).getName());
     }

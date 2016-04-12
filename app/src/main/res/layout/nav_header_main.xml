@@ -26,10 +26,5 @@
         android:text="@string/darrellii"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <TextView
-        android:id="@+id/guilds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Guilds" />
 
 </LinearLayout>

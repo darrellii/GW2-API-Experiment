@@ -43,8 +43,7 @@ public class WalletFragment extends Fragment implements WalletContract.View{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        System.out.println("onCreateView");
-        View view = inflater.inflate(R.layout.fragment_wallet, container, false);
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         mRecyclerView.setLayoutManager( new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(mAdapter);
@@ -62,7 +61,6 @@ public class WalletFragment extends Fragment implements WalletContract.View{
 
     @Override
     public void setAdapter(List<Currency> wallet) {
-        System.out.println("setAdapter "+ wallet.get(0).getName());
         mAdapter.replaceData(wallet);
         mAdapter.notifyDataSetChanged();
     }
